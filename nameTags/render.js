@@ -1,6 +1,7 @@
 const render = (state) => {
     const nameTagsDOM = document.getElementById('nameTagsContainer');
 
+
     var nametagsHTML = state.map(function (currentName) {
         return ` 
             <div class="nametag mx-auto w-50 text-center border m-1">
@@ -13,6 +14,6 @@ const render = (state) => {
     nameTagsDOM.innerHTML = `
         <div class="nametagContainer">
             ${nametagsHTML.join('')}           
-        </div>
+            </div>
     `
 }

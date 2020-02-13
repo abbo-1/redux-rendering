@@ -17,11 +17,27 @@ const initialState = [
     },
 ];
 
+function deepClone(newObject) {
+    return JSON.parse(JSON.stringify(newObject));
+}
+
 const reducer = (state = initialState, action) => {
     // Handle actions here - make sure you don't mutate the state!
     const { type } = action;
 
     // ACTION: Add a random circle
+    if (type === "ADD_CIRCLE") {
 
-    return state;
+        let newState = deepClone(state);
+        newState.push({
+            radius: 50,
+            color: "#FF99AA"
+         } )
+        return newState
+
+    }
+
+   else {
+     return state;
+   }
 }
